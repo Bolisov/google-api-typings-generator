@@ -622,7 +622,7 @@ export class App {
                 forEachOrdered(api.resources, (resource, resourceName) => {
                     if (resourceName !== "debugger") {
                         writer.endLine();                        
-                        writer.writeLine(`const ${resourceName}: ${api.name}.${this.getResourceTypeName(resourceName)};`);                        
+                        writer.writeLine(`const ${resourceName}: ${this.getResourceTypeName(resourceName)};`);                        
                     }
                 });
             });
