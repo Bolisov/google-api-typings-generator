@@ -107,6 +107,7 @@ interface ITypescriptTextWriter {
 }
 
 type TypescriptWriterCallback = (writer: TypescriptTextWriter) => void;
+type methodParam = { parameter: string, type: string | TypescriptWriterCallback };
 
 function formatPropertyName(name: string) {
     if (name.indexOf(".") >= 0 || name.indexOf("-") >= 0 || name.indexOf("@") >= 0) {
@@ -256,7 +257,8 @@ class TypescriptTextWriter implements ITypescriptTextWriter {
         }
     }
 
-    public method(name: string, parameters: [{ parameter: string, type: string | TypescriptWriterCallback }], returnType: string, singleLine = false) {
+
+    public method(name: string, parameters: methodParam[], returnType: string, singleLine = false) {
         this.writer.startIndentedLine(`${name}(`);
 
         _.forEach(parameters, (parameter, index) => {

@@ -5,5 +5,7 @@ This project using [Google API discovery](https://developers.google.com/discover
 ## Usage
 Run program:
 ```
-npm start
+npm start --out /path/to/DefinitelyTyped/types/
 ```
+
+If you don't provide a value for `--out`, the default is a directory named `out` in the working directory.
