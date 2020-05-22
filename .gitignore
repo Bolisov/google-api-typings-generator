@@ -1,6 +1,5 @@
 /node_modules
-/typings
-/out
-/generator.js
-/generator.js.map
-/distr
+/types
+/dist
+/.tmp
+/dt-fork
